@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paws & Preferences | Find Your Favourite Kitty</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🐱</span>
+                <h1>Paws & Preferences</h1>
+            </div>
+            <p class="tagline">Swipe to find your favourite kitties!</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Loading State -->
+            <div class="loading-screen" id="loadingScreen">
+                <div class="loader">
+                    <span class="paw">🐾</span>
+                </div>
+                <p>Loading adorable kitties...</p>
+            </div>
+
+            <!-- Card Stack Container -->
+            <div class="card-container" id="cardContainer">
+                <div class="card-stack" id="cardStack">
+                    <!-- Cards will be injected here -->
+                </div>
+                
+                <!-- Progress indicator -->
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p class="progress-text"><span id="currentIndex">1</span> / <span id="totalCats">15</span></p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="actions" id="actions">
+                <button class="action-btn dislike-btn" id="dislikeBtn" aria-label="Dislike">
+                    <span class="btn-icon">✕</span>
+                </button>
+                <button class="action-btn like-btn" id="likeBtn" aria-label="Like">
+                    <span class="btn-icon">♥</span>
+                </button>
+            </div>
+
+            <!-- Swipe Instructions -->
+            <div class="instructions" id="instructions">
+                <div class="instruction">
+                    <span class="swipe-arrow left">←</span>
+                    <span>Swipe left to pass</span>
+                </div>
+                <div class="instruction">
+                    <span>Swipe right to like</span>
+                    <span class="swipe-arrow right">→</span>
+                </div>
+            </div>
+
+            <!-- Results Screen -->
+            <div class="results-screen hidden" id="resultsScreen">
+                <div class="results-header">
+                    <h2>Your Results!</h2>
+                    <div class="stats">
+                        <div class="stat liked">
+                            <span class="stat-icon">♥</span>
+                            <span class="stat-number" id="likedCount">0</span>
+                            <span class="stat-label">Liked</span>
+                        </div>
+                        <div class="stat passed">
+                            <span class="stat-icon">✕</span>
+                            <span class="stat-number" id="passedCount">0</span>
+                            <span class="stat-label">Passed</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="liked-cats-section">
+                    <h3>Your Favourite Kitties</h3>
+                    <div class="liked-cats-grid" id="likedCatsGrid">
+                        <!-- Liked cats will be shown here -->
+                    </div>
+                    <p class="no-likes hidden" id="noLikes">You didn't like any cats! 😿 Give them another chance?</p>
+                </div>
+
+                <button class="restart-btn" id="restartBtn">
+                    <span>🔄</span> Start Over
+                </button>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with 💕 for cat lovers</p>
+            <p class="api-credit">Cat photos from <a href="https://cataas.com" target="_blank" rel="noopener">Cataas</a></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
